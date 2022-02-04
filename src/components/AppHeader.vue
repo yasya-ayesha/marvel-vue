@@ -5,7 +5,14 @@
                 Marvel
             </a>
             <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Поиск" aria-label="Search">
+                <input 
+                    class="form-control me-2" 
+                    type="search" 
+                    placeholder="Поиск" 
+                    aria-label="Search"
+                    v-model="search"
+                    @input="changeSearch(search)"
+                >
                 <button class="btn btn-outline-light" type="submit">
                     Найти
                 </button>
@@ -17,10 +24,10 @@
 <script>
     export default {
         name: "AppHeader",
-        data() {
-            return {
-            }
-        },
+        props: ['changeSearch'],
+        data: () => ({
+            search: ''
+        }),
     }
 </script>
 
