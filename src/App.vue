@@ -8,6 +8,10 @@
                 Персонажи Marvel
             </h1>
 
+            <h5 v-if="!character.length && !loading">
+                К сожалению, поиск не дал результатов :(
+            </h5>
+
             <app-modal :character="character[characterIndex]" />
 
             <spinner v-if="loading" />
